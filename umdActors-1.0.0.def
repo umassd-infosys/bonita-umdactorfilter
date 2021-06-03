@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+  <id>umdActors</id>
+  <version>1.0.0</version>
+  <icon>umassd.png</icon>
+  <input defaultValue="Group" mandatory="true" name="actorType" type="java.lang.String"/>
+  <input mandatory="true" name="stringValue" type="java.lang.String"/>
+  <input defaultValue="true" name="allowDelegation" type="java.lang.Boolean"/>
+  <input defaultValue="true" name="autoAssign" type="java.lang.Boolean"/>
+  <input defaultValue="" name="fallbackValue" type="java.lang.String"/>
+  <input defaultValue="infosys" mandatory="true" name="fallbackUser" type="java.lang.String"/>
+  <page id="umdActorFilter">
+    <widget xsi:type="definition:Select" id="actorType" inputName="actorType">
+      <items>Group - group Id - Long</items>
+      <items>Group - groupName - String</items>
+      <items>Supervisor - User Id - Long</items>
+      <items>Plan Chairperson - plan name - String</items>
+      <items>Plan Program Director - plan name - String</items>
+      <items>Plan Dean - plan code - String</items>
+      <items>Subject Chairperson - subject code - String</items>
+      <items>Subject Dean - subject code - String</items>
+      <items>HR Chairperson - HR Department Id - String</items>
+      <items>HR Dean - HR Department Id - String</items>
+      <items>User - User Id - Long</items>
+      <items>User - User Name - String</items>
+      <items>User List - CSV of User Ids - String</items>
+      <items>Actor Members - Actor Name - String</items>
+      <items>Role Members - Role Name - String</items>
+      <items>Division Head - HR Department Id - String</items>
+    </widget>
+    <widget xsi:type="definition:Text" id="actorValue" inputName="stringValue" showDocuments="true"/>
+    <widget xsi:type="definition:Checkbox" id="allowDelegation" inputName="allowDelegation"/>
+    <widget xsi:type="definition:Checkbox" id="autoAssign" inputName="autoAssign"/>
+    <widget xsi:type="definition:Text" id="fallbackUsername" inputName="fallbackUser"/>
+    <widget xsi:type="definition:Text" id="fallbackValue" inputName="fallbackValue" showDocuments="true"/>
+  </page>
+</definition:ConnectorDefinition>
